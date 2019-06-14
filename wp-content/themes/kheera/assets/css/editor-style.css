@@ -1,0 +1,197 @@
+/*
+Theme Name: Kheera
+Description: Used to style the TinyMCE editor.
+*/
+
+
+/* 1. Body */
+
+	html{ font-size:24px; }
+	
+	body {
+		background-color: #FFFFFF;
+		font-family: 'Overlock', cursive;
+		font-size: 0.750rem;
+		
+		border: 0;
+		margin-left:10%;
+		margin-right:10%;
+		padding-left:10%;
+		padding-right:10%;
+	}
+	
+	
+/* 2. Typography 
+------------------------------------------------------
+This style sheet contains the default values of typography.
+If changes have been made to the theme options using WooCommerce,
+the results on the site may deffer from those displayed in TinyMCE editor.
+
+*/	
+
+	h1,h2,h3,h4,h5,h6{
+		font-family: 'Oranienbaum', serif;
+		font-weight: 400;
+		margin-bottom:10px;  
+		color:#161717;
+	}	
+	
+ 
+	h1 { font-size: 2.000rem; } 
+	h2 {	font-size: 1.800rem; } 
+	h3 { font-size: 1.600rem; }
+	h4 { font-size: 1.400rem; }
+	h5 { font-size: 1.200rem; }
+	h6 { font-size: 1.000rem; }
+	
+	del { color: #777; }
+	
+	ins {
+		background: #fff9c0;
+		text-decoration: none;
+	}
+	
+	sub,	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+	
+	table, th, td , table th td, table th{
+		font-size: 0.850rem;
+		padding: 15px;
+	}
+	
+	table { 
+		margin-top:20px;
+		margin-bottom:20px;
+	}	
+	
+	.table > thead > tr > th { border-bottom:4px solid #D9D9D9;}
+	
+	.table > tbody > tr > td { border:none;}
+	
+	blockquote{ 
+		margin: 15px 20px 15px 20px; 
+		padding:20px 10px 20px 10px;
+		line-height: 2.000rem;
+		font-size:1.750rem;
+		color:#868686;
+	}
+	
+	blockquote:before{
+		display:block;
+		content: open-quote;
+		font-size:3.000rem;
+		margin-right:100%;
+	}		
+	
+	blockquote:after{
+		display:block;
+		content: close-quote;
+		font-size:3.000rem;
+		margin-left:100%;
+	}	 
+	
+	blockquote p { line-height: 1.500em;}
+	
+	
+	.label {
+		display: inline;
+		padding: 1px 5px 1px 5px;
+		font-size:90%;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: baseline;
+		border-radius: 3px;
+	}
+	
+	code { 
+		padding: 5px 5px 5px 5px; 
+		margin: 5px 5px 5px 5px; 
+	}
+	
+	span.dropcap, .dropcap::first-letter{
+		font-size:300%;
+		font-family: 'Oranienbaum', serif;
+		font-weight:bold;
+		vertical-align: -5px;
+	}	
+	
+	ul{ 
+		list-style-type:none;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+	
+	li { margin-left:15px;}
+	
+	ol {
+		list-style-type:none;
+		counter-reset:li;
+		margin-top:20px;
+		margin-bottom:20px;		
+	}
+
+	dl{
+		margin-top:20px;
+		margin-bottom:20px;
+		font-size:0.750em;
+	}
+
+	dd {	margin-bottom:15px;}
+	
+	address {
+		margin-top: 20px;
+		font-size: 0.850em;
+		line-height: 1.600em;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	pre	{
+		margin-top: 20px;
+		font-size: 0.850em;
+		line-height: 1.600em;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	cite	{
+		text-align:right;
+	}
+	
+	a:focus:active, a:focus {
+		text-decoration:none;
+	}
+
+	a{
+		color:#AB4234;
+		transition: all 500ms ease;
+	}
+	
+	a:hover{
+		color:#161717;
+	}	
+
+	.label-primary{
+		background-color:#AB4234;
+		color:#FFFFFF;
+		transition:all 500ms ease;
+	}
+	
+	.label-primary:hover{
+		background-color:#161717;
+		color:#FFFFFF;
+	}	
+
+	::selection {
+		background: #AB4234; 
+		color:#D1D1D1;
+	}
+	
+	::-moz-selection {
+		background: #AB4234; 
+		color:#D1D1D1;
+	}

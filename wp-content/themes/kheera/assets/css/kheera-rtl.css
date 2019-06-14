@@ -1,0 +1,27 @@
+/*
+Theme Name: Kheera
+Description: RTL Stylesheet.
+*/
+
+	
+	.primary-navigation, .navbar-nav > li > a, .slider-category, .home-slider-item-overlay,
+	.promo-box-overlay, .content-container, .read-more-button, .bottom-post-meta-container,
+	.footer-content, .footer-bar, .hidden-sidebar, .secondary-navigation nav, .primary-navigation nav
+	{
+		direction:rtl;
+	}	
+	
+	
+	.popular-posts-slider-3, .posts-pagination, .widget_search, .latest-comments-container,
+	.widget_archive, .popular-posts-slider, .main-post-embed-container,	.main-post-gallery-container,
+	.post-comments-meta, .product-meta-container, .product-tabs-titles-container, .add-to-cart-form-container
+	{
+		direction:ltr;
+	}	
+	
+	
+	.content-widget-area .widget .popular-posts-slider-item h5 a, .next .page-numbers, .widget_search h4,
+	.search-form-input, .latest-comment-container p, .widget h4, .widget_archive li a,
+	.product-widget-item h6{
+		direction:rtl;
+	}	

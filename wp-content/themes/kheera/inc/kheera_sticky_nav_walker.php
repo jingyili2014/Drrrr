@@ -1,0 +1,77 @@
+<?php
+/**
+* Nav Walker Class for theme primary navigation
+*
+* Eventually, some of the functionality here could be replaced by core features.
+*
+* @package kheera	1.0.0
+*/
+	 
+	class Kheera_Sticky_Nav_Walker extends Walker_Nav_Menu {
+	
+		private $currentItem;
+		
+		function start_lvl( &$output, $depth = 0, $args = Array() ) {
+			
+			$indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
+			if(isset($this->currentItem)){
+				if(in_array('menu-item-has-children',$this->currentItem->classes)){
+					$output .= "\n" . $indent . '<ul id="sticky-collapse-menu-item-'.$this->currentItem->ID.'" class="dropdown-menu">' . "\n";
+				}
+				else{
+					$output .= "\n" . $indent . '<ul class="dropdown-menu">' . "\n";
+				}	
+			}	
+			else{
+				$output .= "\n" . $indent . '<ul class="dropdown-menu">' . "\n";
+			}
+		}
+		
+		// add main/sub classes to li's and links
+		function start_el( &$output, $item, $depth = 0, $args = Array(), $id = 0 ) {
+			
+			$this->currentItem = $item;
+			$indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
+			
+			
+			if(isset($item->classes)){
+				if($depth > 0){ 
+					if(in_array('menu-item-has-children',$item->classes)){
+						
+						
+						array_push($item->classes,'dropdown');
+						
+						$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
+						$output .= '<a itemprop="url" href="' . $item->url . '">';
+						$output .= $item->title;
+						$output .= '</a>';
+						
+						$output .= '<span class="submenu" data-toggle="collapse" data-target="#sticky-collapse-menu-item-'.$item->ID.'" ><i class="fas fa-angle-down" aria-hidden="true"></i></span>';
+					}
+					else{
+						$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
+						$output .= '<a itemprop="url" href="' . $item->url . '">';
+						$output .= $item->title;
+						$output .= '</a>';
+					}
+				}
+				else{
+					$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
+					$output .= '<a itemprop="url" href="' . $item->url . '">';
+					$output .= $item->title;
+					$output .= '</a>';
+					
+					if(in_array('menu-item-has-children',$item->classes)){
+						$output .= '<span class="submenu" data-toggle="collapse" data-target="#sticky-collapse-menu-item-'.$item->ID.'" ><i class="fa fa-angle-down" aria-hidden="true"></i></span>';
+					}
+					
+					
+					
+					
+				}
+			}	
+		}	
+	
+	}	
+
+?>
